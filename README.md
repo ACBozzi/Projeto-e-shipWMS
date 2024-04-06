@@ -1,6 +1,7 @@
 # Web Service de Gerenciamento de Livros
 
-Funcionalidades
+#Funcionalidades
+
 O Web Service oferece as seguintes funcionalidades:
 
 Adicionar livro: Permite adicionar novos livros ao sistema.
