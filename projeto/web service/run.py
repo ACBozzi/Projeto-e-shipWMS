@@ -1,8 +1,7 @@
-# run.py
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 
-from app.controllers.livro_controller import adicionar_livro, buscar_livro
+from app.controllers.livro_controller import adicionar_livro, buscar_livro, listar_livros
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -19,8 +18,6 @@ def verify_password(username, password):
 @app.route('/', methods=['GET'])
 def index():
     return 'Bem-vindo ao nosso Web Service'
-
-
 
 @app.route('/adicionar-livro', methods=['POST'])
 @auth.login_required
@@ -42,6 +39,12 @@ def buscar():
         return jsonify(resultado)
     else:
         return jsonify({'message': 'Endpoint para buscar livros. Use um método POST com o corpo da solicitação contendo o nome do livro.'})
+
+@app.route('/listar-livros', methods=['GET'])
+@auth.login_required
+def listar():
+    livros = listar_livros()
+    return jsonify(livros)
 
 if __name__ == '__main__':
     app.run(debug=True)
