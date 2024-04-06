@@ -50,12 +50,12 @@ O Web Service oferece as seguintes funcionalidades:
 4. Remover Livro: DELETE /remover-livro/{nome}
 
 ## Autenticação 
-*O acesso aos endpoints é protegido por autenticação HTTP Basic Authentication.
--As credenciais padrão são: Usuário: user, Senha: password
+* O acesso aos endpoints é protegido por autenticação HTTP Basic Authentication.
+- As credenciais padrão são: Usuário: user, Senha: password
 
 ## Estrutura
-*O projeto segue uma estrutura MVC (Model-View-Controller)
+* O projeto segue uma estrutura MVC (Model-View-Controller)
 
 ## Dados
-*Os dados dos livros são armazenados em um arquivo TXT chamado livros.txt.
--A leitura e escrita dos dados são realizadas utilizando a biblioteca JSON para serialização e desserialização dos objetos.
+* Os dados dos livros são armazenados em um arquivo TXT chamado livros.txt.
+- A leitura e escrita dos dados são realizadas utilizando a biblioteca JSON para serialização e desserialização dos objetos.
