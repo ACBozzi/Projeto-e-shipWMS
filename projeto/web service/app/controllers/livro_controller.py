@@ -10,3 +10,7 @@ def adicionar_livro(dados):
 def buscar_livro(nome):
     resultado = [livro.__dict__ for livro in livros if nome.lower() in livro.nome.lower()]
     return resultado
+
+
+def listar_livros():
+    return [livro.__dict__ for livro in livros]
