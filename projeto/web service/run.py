@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_httpauth import HTTPBasicAuth
 
-from app.controllers.livro_controller import adicionar_livro, buscar_livro, listar_livros
+from app.controllers.livro_controller import adicionar_livro, buscar_livro, listar_livros, remover_livro
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -45,6 +45,17 @@ def buscar():
 def listar():
     livros = listar_livros()
     return jsonify(livros)
+
+
+@app.route('/remover-livro/<string:nome>', methods=['DELETE'])
+@auth.login_required
+def remover(nome):
+    try:
+        remover_livro(nome)
+        return f'Livro {nome} removido com sucesso'
+    except Exception as e:
+        return str(e), 400
+
 
 if __name__ == '__main__':
     app.run(debug=True)

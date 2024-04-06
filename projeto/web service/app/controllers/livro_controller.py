@@ -36,3 +36,8 @@ def buscar_livro(nome):
 
 def listar_livros():
     return [livro.__dict__ for livro in livros]
+
+def remover_livro(nome):
+    livros = carregar_livros_arquivo()
+    livros = [livro for livro in livros if livro.nome != nome]
+    salvar_livros_arquivo(livros)
