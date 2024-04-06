@@ -17,7 +17,7 @@ def verify_password(username, password):
 
 @app.route('/', methods=['GET'])
 def index():
-    return 'Bem-vindo ao nosso Web Service'
+    return 'Bem-vindo ao Web Service da Anna'
 
 @app.route('/adicionar-livro', methods=['POST'])
 @auth.login_required
