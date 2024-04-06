@@ -1,6 +1,6 @@
 # Web Service de Gerenciamento de Livros
 
-#Funcionalidades
+## Funcionalidades
 
 O Web Service oferece as seguintes funcionalidades:
 
